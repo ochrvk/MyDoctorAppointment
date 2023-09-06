@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyDoctorAppointment.Data.Configuration
+﻿namespace MyDoctorAppointment.Data.Configuration
 {
-    internal class Constants
+    public class Constants
     {
+        public const string AppSettingsPath = "C:\\Users\\olekch\\Desktop\\Git\\ochrvk\\MyDoctorAppointment\\DoctorAppointment.Data\\Configuration\\appsettings.json";
     }
 }
