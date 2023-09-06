@@ -37,26 +37,57 @@ namespace MyDoctorAppointment.Data.Repositories
             return doctor;
         }
 
-        public Doctor GetById(int id)
+        public Doctor? GetById(int id)
         {
-            throw new NotImplementedException();
+            return GetAll().FirstOrDefault(x => x.Id == id);
         }
 
         public Doctor Update(int id, Doctor doctor)
         {
-            throw new NotImplementedException();
+            doctor.UpdatedAt = DateTime.Now;
+            doctor.Id = id;
+
+            File.WriteAllText(Path,
+                JsonConvert.SerializeObject(GetAll().Select(x => x.Id == id ? doctor : x),
+                    Formatting.Indented));
+
+            return doctor;
         }
 
         public IEnumerable<Doctor> GetAll()
         {
-            throw new NotImplementedException();
+            if (!File.Exists(Path))
+            {
+                File.WriteAllText(Path, "[]");
+            }
+
+            var json = File.ReadAllText(Path);
+
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                File.WriteAllText(Path, "[]");
+                json = "[]";
+            }
+
+            return JsonConvert.DeserializeObject<List<Doctor>>(json);
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (GetById(id) is null)
+            {
+                return false;
+            }
+
+            File.WriteAllText(Path,
+                JsonConvert.SerializeObject(GetAll().Where(x => x.Id != id),
+                    Formatting.Indented));
+
+            return true;
         }
 
-        private dynamic ReadFromAppSettings() => JsonConvert.DeserializeObject<dynamic>(File.ReadAllText(Constants.AppSettingsPath));
+        private dynamic? ReadFromAppSettings() =>
+            JsonConvert.DeserializeObject<dynamic>
+                (File.ReadAllText(Constants.AppSettingsPath));
     }
 }
