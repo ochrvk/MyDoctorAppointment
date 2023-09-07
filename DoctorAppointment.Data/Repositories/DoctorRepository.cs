@@ -13,7 +13,7 @@ namespace MyDoctorAppointment.Data.Repositories
 
         public DoctorRepository()
         {
-            dynamic result = ReadFromAppSettings();
+            dynamic? result = ReadFromAppSettings();
 
             Path = result.Database.Doctors.Path;
             LastId = result.Database.Doctors.LastId;
@@ -21,10 +21,10 @@ namespace MyDoctorAppointment.Data.Repositories
 
         private void SaveLastId()
         {
-            dynamic result = ReadFromAppSettings();
+            dynamic? result = ReadFromAppSettings();
             result.Database.Doctors.LastId = LastId;
 
-            File.WriteAllText(Constants.AppSettingsPath, result.toString());
+            File.WriteAllText(Constants.AppSettingsPath, result.ToString());
         }
 
         public Doctor Create(Doctor doctor)
