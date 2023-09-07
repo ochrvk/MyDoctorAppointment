@@ -4,11 +4,11 @@ namespace MyDoctorAppointment.Data.Interfaces
 {
     public interface IGenericRepository<TSource> where TSource : Auditable
     {
-        TSource Create(TSource entity);
+        TSource Create(TSource source);
 
-        TSource GetById(int id);
+        TSource? GetById(int id);
 
-        TSource Update(int id, TSource entity);
+        TSource Update(int id, TSource source);
 
         IEnumerable<TSource> GetAll();
 
