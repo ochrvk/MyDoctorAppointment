@@ -1,5 +1,4 @@
-﻿using MyDoctorAppointment.Domain.Entities;
-using MyDoctorAppointment.Service.Interfaces;
+﻿using MyDoctorAppointment.Service.Interfaces;
 using MyDoctorAppointment.Service.Services;
 
 namespace MyDoctorAppointment
@@ -15,7 +14,11 @@ namespace MyDoctorAppointment
 
         public void Menu()
         {
-            Console.WriteLine("Current doctors list: ");
+            while (true)
+            {
+                //add Enum for menu items and describe menu
+            }
+            /*Console.WriteLine("Current doctors list: ");
             var docs = _doctorService.GetAll();
 
             foreach (var doc in docs)
@@ -40,7 +43,7 @@ namespace MyDoctorAppointment
             foreach (var doc in docs)
             {
                 Console.WriteLine(doc.Name);
-            }
+            }*/
         }
     }
 

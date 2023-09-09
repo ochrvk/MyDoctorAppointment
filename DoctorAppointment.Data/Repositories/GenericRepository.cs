@@ -2,7 +2,6 @@
 using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Domain.Entities;
 using Newtonsoft.Json;
-using System.Numerics;
 
 namespace MyDoctorAppointment.Data.Repositories
 {
@@ -11,6 +10,7 @@ namespace MyDoctorAppointment.Data.Repositories
         public abstract string Path { get; set; }
 
         public abstract int LastId { get; set; }
+
         public TSource Create(TSource source)
         {
             source.Id = ++LastId;
@@ -20,6 +20,7 @@ namespace MyDoctorAppointment.Data.Repositories
                 JsonConvert.SerializeObject(GetAll().Append(source), Formatting.Indented));
             return source;
         }
+
         public bool Delete(int id)
         {
             if (GetById(id) is null)
@@ -33,6 +34,7 @@ namespace MyDoctorAppointment.Data.Repositories
 
             return true;
         }
+
         public IEnumerable<TSource> GetAll()
         {
             if (!File.Exists(Path))
@@ -50,7 +52,9 @@ namespace MyDoctorAppointment.Data.Repositories
 
             return JsonConvert.DeserializeObject<List<TSource>>(json)!;
         }
+
         public TSource? GetById(int id) { return GetAll().FirstOrDefault(x => x.Id == id); }
+
         public TSource Update(int id, TSource source)
         {
             source.UpdatedAt = DateTime.Now;
@@ -63,10 +67,12 @@ namespace MyDoctorAppointment.Data.Repositories
             return source;
         }
 
+        public abstract void ShowInfo(TSource source);
+
         protected abstract void SaveLastId();
 
         protected dynamic? ReadFromAppSettings() =>
-    JsonConvert.DeserializeObject<dynamic>
-        (File.ReadAllText(Constants.AppSettingsPath));
+            JsonConvert.DeserializeObject<dynamic>
+                (File.ReadAllText(Constants.AppSettingsPath));
     }
 }
