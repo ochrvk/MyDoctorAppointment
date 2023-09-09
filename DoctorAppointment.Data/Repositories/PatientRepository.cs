@@ -4,14 +4,14 @@ using MyDoctorAppointment.Domain.Entities;
 
 namespace MyDoctorAppointment.Data.Repositories
 {
-    public class DoctorRepository : GenericRepository<Doctor>, IDoctorRepository
+    public class PatientRepository : GenericRepository<Patient>, IPatientRepository
     {
-        public DoctorRepository()
+        public PatientRepository()
         {
             dynamic? result = ReadFromAppSettings();
 
-            Path = result!.Database.Doctors.Path;
-            LastId = result.Database.Doctors.LastId;
+            Path = result!.Database.Patients.Path;
+            LastId = result.Database.Patients.LastId;
         }
 
         public override string Path { get; set; }
@@ -21,7 +21,7 @@ namespace MyDoctorAppointment.Data.Repositories
         protected override void SaveLastId()
         {
             dynamic? result = ReadFromAppSettings();
-            result!.Database.Doctors.LastId = LastId;
+            result!.Database.Patients.LastId = LastId;
 
             File.WriteAllText(Constants.AppSettingsPath, result.ToString());
         }

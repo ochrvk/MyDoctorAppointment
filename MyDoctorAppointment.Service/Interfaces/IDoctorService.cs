@@ -5,14 +5,16 @@ namespace MyDoctorAppointment.Service.Interfaces
 {
     public interface IDoctorService
     {
-        Doctor Create(Doctor doctor);
+        DoctorViewModel Create(Doctor doctor);
 
         IEnumerable<DoctorViewModel> GetAll();
 
-        Doctor? Get(int id);
+        DoctorViewModel? Get(int id);
 
         bool Delete(int id);
 
-        Doctor Update(int id, Doctor doctor);
+        DoctorViewModel Update(int id, Doctor doctor);
+
+        void ShowInfo(Doctor doctor);
     }
 }

@@ -16,9 +16,11 @@ namespace MyDoctorAppointment.Service.Services
 
         private readonly IDoctorRepository _doctorRepository;
 
-        public Doctor Create(Doctor doctor)
+        public DoctorViewModel Create(Doctor doctor)
         {
-            return _doctorRepository.Create(doctor);
+            var doctors = _doctorRepository.Create(doctor);
+            var doctorViewModels = doctors.ConvertTo();
+            return doctorViewModels;
         }
 
         public bool Delete(int id)
@@ -26,9 +28,11 @@ namespace MyDoctorAppointment.Service.Services
             return _doctorRepository.Delete(id);
         }
 
-        public Doctor? Get(int id)
+        public DoctorViewModel? Get(int id)
         {
-            return _doctorRepository.GetById(id);
+            var doctors = _doctorRepository.GetById(id)!;
+            var doctorViewModels = doctors.ConvertTo();
+            return doctorViewModels;
         }
 
         public IEnumerable<DoctorViewModel> GetAll()
@@ -38,9 +42,23 @@ namespace MyDoctorAppointment.Service.Services
             return doctorViewModels;
         }
 
-        public Doctor Update(int id, Doctor doctor)
+        public DoctorViewModel Update(int id, Doctor doctor)
         {
-            return _doctorRepository.Update(id, doctor);
+            var doctors = _doctorRepository.Update(id, doctor);
+            var doctorViewModels = doctors.ConvertTo();
+            return doctorViewModels;
+        }
+
+        public void ShowInfo(Doctor doctor)
+        {
+            var doctorViewModel = doctor.ConvertTo();
+            Console.WriteLine("Doctor name: " + doctorViewModel.Name);
+            Console.WriteLine("Doctor surname: " + doctorViewModel.Surname);
+            Console.WriteLine("Doctor email: " + doctorViewModel.Email);
+            Console.WriteLine("Doctor phone: " + doctorViewModel.Phone);
+            Console.WriteLine("Doctor type: " + doctorViewModel.DoctorType);
+            Console.WriteLine("Doctor experiance: " + doctorViewModel.Experiance);
+            Console.WriteLine("Doctor salary: " + doctorViewModel.Salary);
         }
     }
 }

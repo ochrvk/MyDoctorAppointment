@@ -67,8 +67,6 @@ namespace MyDoctorAppointment.Data.Repositories
             return source;
         }
 
-        public abstract void ShowInfo(TSource source);
-
         protected abstract void SaveLastId();
 
         protected dynamic? ReadFromAppSettings() =>
