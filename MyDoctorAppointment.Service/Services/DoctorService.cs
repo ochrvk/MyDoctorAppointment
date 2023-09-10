@@ -51,14 +51,14 @@ namespace MyDoctorAppointment.Service.Services
 
         public void ShowInfo(Doctor doctor)
         {
-            var doctorViewModel = doctor.ConvertTo();
-            Console.WriteLine("Doctor name: " + doctorViewModel.Name);
-            Console.WriteLine("Doctor surname: " + doctorViewModel.Surname);
-            Console.WriteLine("Doctor email: " + doctorViewModel.Email);
-            Console.WriteLine("Doctor phone: " + doctorViewModel.Phone);
-            Console.WriteLine("Doctor type: " + doctorViewModel.DoctorType);
-            Console.WriteLine("Doctor experiance: " + doctorViewModel.Experiance);
-            Console.WriteLine("Doctor salary: " + doctorViewModel.Salary);
+            var doctorViewModels = doctor.ConvertTo();
+            Console.WriteLine("Doctor name: " + doctorViewModels.Name);
+            Console.WriteLine("Doctor surname: " + doctorViewModels.Surname);
+            Console.WriteLine("Doctor email: " + doctorViewModels.Email);
+            Console.WriteLine("Doctor phone: " + doctorViewModels.Phone);
+            Console.WriteLine("Doctor type: " + doctorViewModels.DoctorType);
+            Console.WriteLine("Doctor experiance: " + doctorViewModels.Experiance);
+            Console.WriteLine("Doctor salary: " + doctorViewModels.Salary);
         }
     }
 }
