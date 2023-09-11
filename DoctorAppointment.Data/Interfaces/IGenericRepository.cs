@@ -1,17 +1,19 @@
-﻿using MyDoctorAppointment.Domain.Entities;
+﻿using MyDoctorAppointment.Data.Enums;
+using MyDoctorAppointment.Domain.Entities;
 
 namespace MyDoctorAppointment.Data.Interfaces
 {
     public interface IGenericRepository<TSource> where TSource : Auditable
     {
-        TSource Create(TSource source);
 
-        TSource? GetById(int id);
+        TSource Create(TSource source, DataFormat dataFormat);
 
-        TSource Update(int id, TSource source);
+        TSource? GetById(int id, DataFormat dataFormat);
 
-        IEnumerable<TSource> GetAll();
+        TSource Update(int id, TSource source, DataFormat dataFormat);
 
-        bool Delete(int id);
+        IEnumerable<TSource> GetAll(DataFormat dataFormat);
+
+        bool Delete(int id, DataFormat dataFormat);
     }
 }

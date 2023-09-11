@@ -5,6 +5,7 @@ namespace MyDoctorAppointment.Service.Interfaces
 {
     public interface IAppointmentService
     {
+
         AppointmentViewModel Create(Appointment appointment);
 
         IEnumerable<AppointmentViewModel> GetAll();
