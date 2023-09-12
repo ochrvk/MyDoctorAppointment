@@ -2,6 +2,7 @@
 using MyDoctorAppointment.Data.Enums;
 using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Domain.Entities;
+using System.Xml.Linq;
 
 namespace MyDoctorAppointment.Data.Repositories
 {
@@ -21,20 +22,12 @@ namespace MyDoctorAppointment.Data.Repositories
 
         public override int LastId { get; set; }
 
-        protected override void SaveLastId(DataFormat dataFormat)
+        protected override void SaveLastId()
         {
-            if (dataFormat == DataFormat.Json)
-            {
-                dynamic? result = ReadFromAppSettings();
-                result!.Database.Patients.LastId = LastId;
+            dynamic? result = ReadFromAppSettings();
+            result!.Database.Patients.LastId = LastId;
 
-                File.WriteAllText(Constants.AppSettingsPath, result.ToString());
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
-
+            File.WriteAllText(Constants.AppSettingsPath, result.ToString());
         }
     }
 }

@@ -7,8 +7,32 @@
     "Surname": "Ivanko",
     "Phone": null,
     "Email": null,
+    "Id": 1,
+    "CreatedAt": "2023-09-12T13:07:03.1868302+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 1,
+    "Experience": 20,
+    "Salary": 0.0,
+    "Name": "Oleg",
+    "Surname": "Ivanko",
+    "Phone": null,
+    "Email": null,
+    "Id": 2,
+    "CreatedAt": "2023-09-12T13:07:12.6604769+03:00",
+    "UpdatedAt": "0001-01-01T00:00:00"
+  },
+  {
+    "DoctorType": 1,
+    "Experience": 20,
+    "Salary": 0.0,
+    "Name": "Oleg",
+    "Surname": "Ivanko",
+    "Phone": null,
+    "Email": null,
     "Id": 3,
-    "CreatedAt": "2023-09-11T12:45:34.7161258+03:00",
+    "CreatedAt": "2023-09-12T13:07:28.8342248+03:00",
     "UpdatedAt": "0001-01-01T00:00:00"
   }
 ]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDoctor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Doctor>
+    <Id>4</Id>
+    <CreatedAt>2023-09-12T13:07:51.8973499+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>Oleg</Name>
+    <Surname>Ivanko</Surname>
+    <DoctorType>Dentist</DoctorType>
+    <Experience>20</Experience>
+    <Salary>0</Salary>
+  </Doctor>
+  <Doctor>
+    <Id>5</Id>
+    <CreatedAt>2023-09-12T13:08:10.6238907+03:00</CreatedAt>
+    <UpdatedAt>0001-01-01T00:00:00</UpdatedAt>
+    <Name>Oleg</Name>
+    <Surname>Ivanko</Surname>
+    <DoctorType>Dentist</DoctorType>
+    <Experience>20</Experience>
+    <Salary>0</Salary>
+  </Doctor>
+</ArrayOfDoctor>

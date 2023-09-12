@@ -10,15 +10,16 @@ namespace MyDoctorAppointment
 
         public DoctorAppointment()
         {
-            _doctorService = new DoctorService();
+            _doctorService = new DoctorService(); 
+            _doctorService.dataFormat = Data.Enums.DataFormat.Xml;
         }
 
         public void Menu()
         {
-            /*  while (true)
-                            {
-                                 //add Enum for menu items and describe menu
-                             }*/
+            /*while (true)
+            {
+                //add Enum for menu items and describe menu
+            }*/
             Console.WriteLine("Current doctors list: ");
             var docs = _doctorService.GetAll();
 
@@ -38,6 +39,8 @@ namespace MyDoctorAppointment
 
             _doctorService.Create(newDoctor);
 
+           
+
             Console.WriteLine("Current doctors list: ");
             docs = _doctorService.GetAll();
 
@@ -48,14 +51,14 @@ namespace MyDoctorAppointment
         }
     }
 
-        public static class Program
+    public static class Program
+    {
+        public static void Main()
         {
-            public static void Main()
-            {
-                var doctorAppointment = new DoctorAppointment();
-                doctorAppointment.Menu();
+            var doctorAppointment = new DoctorAppointment();
+            doctorAppointment.Menu();
 
 
-            }
         }
     }
+}
