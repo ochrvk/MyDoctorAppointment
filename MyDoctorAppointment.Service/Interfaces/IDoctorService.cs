@@ -18,6 +18,6 @@ namespace MyDoctorAppointment.Service.Interfaces
 
         DoctorViewModel Update(int id, Doctor doctor);
 
-        void ShowInfo(Doctor doctor);
+        void ShowInfo(DoctorViewModel doctor);
     }
 }

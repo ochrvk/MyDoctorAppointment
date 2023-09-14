@@ -1,8 +1,6 @@
 ﻿using MyDoctorAppointment.Data.Configuration;
-using MyDoctorAppointment.Data.Enums;
 using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Domain.Entities;
-using System.Xml.Linq;
 
 namespace MyDoctorAppointment.Data.Repositories
 {
@@ -12,9 +10,9 @@ namespace MyDoctorAppointment.Data.Repositories
         {
             dynamic? result = ReadFromAppSettings();
 
-            PathJSON = result!.Database.Appointment.PathJSON;
-            PathXML = result!.Database.Appointment.PathXML;
-            LastId = result.Database.Appointment.LastId;
+            PathJSON = result!.Database.Appointments.PathJSON;
+            PathXML = result!.Database.Appointments.PathXML;
+            LastId = result.Database.Appointments.LastId;
         }
 
         public override string PathJSON { get; set; }

@@ -126,7 +126,9 @@ namespace MyDoctorAppointment.Data.Repositories
             {
                 var xmlSerializer = new XmlSerializer(typeof(List<TSource>));
                 xmlSerializer.Serialize(fileStream, sources);
+                fileStream.Close();
             }
+            
         }
     }
 }

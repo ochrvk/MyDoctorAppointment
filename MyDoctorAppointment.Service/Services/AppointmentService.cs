@@ -53,9 +53,8 @@ namespace MyDoctorAppointment.Service.Services
             return appointmentViewModels;
         }
 
-        public void ShowInfo(Appointment appointment)
+        public void ShowInfo(AppointmentViewModel appointmentViewModels)
         {
-            var appointmentViewModels = appointment.ConvertTo();
 
             Console.WriteLine("Patient: " + appointmentViewModels.Patient!.Name
                 + " " + appointmentViewModels.Patient.Surname);

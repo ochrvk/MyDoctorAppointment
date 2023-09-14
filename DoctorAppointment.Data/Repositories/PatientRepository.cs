@@ -1,8 +1,6 @@
 ﻿using MyDoctorAppointment.Data.Configuration;
-using MyDoctorAppointment.Data.Enums;
 using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Domain.Entities;
-using System.Xml.Linq;
 
 namespace MyDoctorAppointment.Data.Repositories
 {
@@ -13,7 +11,7 @@ namespace MyDoctorAppointment.Data.Repositories
             dynamic? result = ReadFromAppSettings();
 
             PathJSON = result!.Database.Patients.PathJSON;
-            PathXML = result!.Database.Doctors.PathXML;
+            PathXML = result!.Database.Patients.PathXML;
             LastId = result.Database.Patients.LastId;
         }
 

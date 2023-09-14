@@ -1,8 +1,6 @@
 ﻿using MyDoctorAppointment.Data.Configuration;
-using MyDoctorAppointment.Data.Enums;
 using MyDoctorAppointment.Data.Interfaces;
 using MyDoctorAppointment.Domain.Entities;
-using System.Xml.Linq;
 
 namespace MyDoctorAppointment.Data.Repositories
 {

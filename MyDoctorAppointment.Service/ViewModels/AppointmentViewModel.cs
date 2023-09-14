@@ -2,6 +2,11 @@
 {
     public class AppointmentViewModel
     {
+        public AppointmentViewModel()
+        {
+            Patient = new PatientViewModel();
+            Doctor = new DoctorViewModel();
+        }
         public PatientViewModel? Patient { get; set; }
 
         public DoctorViewModel? Doctor { get; set; }

@@ -1,10 +1,13 @@
-﻿using MyDoctorAppointment.Domain.Entities;
+﻿using MyDoctorAppointment.Data.Enums;
+using MyDoctorAppointment.Domain.Entities;
 using MyDoctorAppointment.Service.ViewModels;
 
 namespace MyDoctorAppointment.Service.Interfaces
 {
     public interface IPatientService
     {
+        DataFormat dataFormat { get; set; }
+
         PatientViewModel Create(Patient patient);
 
         IEnumerable<PatientViewModel> GetAll();
@@ -15,6 +18,6 @@ namespace MyDoctorAppointment.Service.Interfaces
 
         PatientViewModel Update(int id, Patient patient);
 
-        void ShowInfo(Patient patient);
+        void ShowInfo(PatientViewModel patient);
     }
 }

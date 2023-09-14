@@ -3,8 +3,8 @@
     public enum DoctorTypes
     {
         Dentist = 1,
-        Dermatologist,
-        FamilyDoctor,
-        Paramedic
+        Dermatologist = 2,
+        FamilyDoctor = 3,
+        Paramedic = 4,
     }
 }

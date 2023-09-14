@@ -3,9 +3,9 @@
     public enum IllnessTypes
     {
         EyeDisease = 1,
-        Infection,
-        DentalDisease,
-        SkinDisease,
-        Ambulance,
+        Infection = 2,
+        DentalDisease = 3,
+        SkinDisease = 4,
+        Ambulance = 5,
     }
 }
